@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8;FF=3;OtherUA=4" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal randkowy dla dorosłych - bez zdjęć, nicków, telefonów... tylko wy i wasza tajemnica.">
+    <meta name="keywords" content="portal randkowy, portal towarzyski, randki, 18+, seks, sex, seks">
+    <title>HookMe - portal randkowy dla dorosłych</title>
+    @*@Styles.Render("~/Content/css")*@
+    @*Zakomentowane i dodane ręcznie poniżej*@
+
+    <!--FACEBOOK SLIDER START-->
+    <script src="http://www.hookme.pl/Scripts/bb_fbslider.js"></script>
+    <!--FACEBOOK SLIDER END--> 
+
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/site.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/ionicons.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/font-awesome.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/jquery.fancybox.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/animations.min.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    <link href="~/Content/style-red.css" type="text/css" rel="stylesheet" media="all" runat="server" />
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!--GOOGLE ANALYTICS START-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-93384844-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!--GOOGLE ANALYTICS END-->      
+</head>
+<body>
+    <!--MENU SECTION START-->
+    <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.hookme.pl">
+                    <img src="~/Content/img/logo.png" width="200" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                @{
+                    string CurrentURL = Request.Url.AbsoluteUri;
+
+                    if (CurrentURL.Count(x => x == '/') <= 3)
+                    {
+                        @:<ul class="nav navbar-nav navbar-right">
+                            @:<li><a href="#home">HOME</a></li>
+                            @:<li><a href="#pricing">Kiedy ruszymy?</a></li>
+                            @:<li><a href="#services">Czym jest HookMe?</a></li>
+                            @:<li><a href="#team">Partnerzy</a></li>
+                        @:</ul>
+                    }
+                    else
+                    {
+                        @:<ul class="nav navbar-nav navbar-right">
+                            @:<li><a href="@Url.Action("Index","Home")#home">HOME</a></li>
+                            @:<li><a href="@Url.Action("Index","Home")#pricing">Kiedy ruszymy?</a></li>
+                            @:<li><a href="@Url.Action("Index","Home")#services">Czym jest HookMe?</a></li>
+                            @:<li><a href="@Url.Action("Index","Home")#team">Partnerzy</a></li>
+                        @:</ul>
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+    <!--MENU SECTION END-->   
+    @RenderBody()
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)    
+</body>
+</html>
