@@ -9,7 +9,7 @@ namespace HookMe
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.min.js"));
+                        "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate.min*"));
@@ -20,13 +20,15 @@ namespace HookMe
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bb_fbslider.js",
+                      "~/Scripts/google_analytics.js",
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/vegas/jquery.vegas.min.js",
                       "~/Scripts/jquery.easing.min.js",
-                      //"~/Scripts/source/jquery.fancybox.js",
+                      "~/Scripts/source/jquery.fancybox.js",
                       "~/Scripts/jquery.isotope.js",
                       "~/Scripts/appear.min.js",
-                      "~/Scripts/animations.min.js",                      
+                      "~/Scripts/animations.min.js",
                       "~/Scripts/custom.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -34,7 +36,7 @@ namespace HookMe
                       "~/Content/site.css",
                       "~/Content/ionicons.css",
                       "~/Content/font-awesome.css",
-                      //"~/Content/jquery.fancybox.css",
+                      "~/Content/jquery.fancybox.css",
                       "~/Content/animations.min.css",
                       "~/Content/style-red.css"));
         }
