@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressSSLPort>44307</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -238,6 +238,7 @@
     <Content Include="Content\img\back\4.jpg" />
     <Content Include="Content\img\back\5.jpg" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\polecamy\bordeaux.png" />
     <Content Include="Content\img\polecamy\najlepszaerotyka.jpg" />
     <Content Include="Content\img\polecamy\hookme_fanpage.jpg" />
     <Content Include="Content\img\polecamy\swing.jpg" />
